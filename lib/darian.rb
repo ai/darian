@@ -161,4 +161,9 @@ class Darian
   end
   alias :week_day_name :week_sol_name
 
+  def to_s
+    sprintf '%d-%02d-%02d %02d:%02d:%02d',
+            @year, @month, @sol, @hour, @min, @sec
+  end
+
 end
