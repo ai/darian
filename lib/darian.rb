@@ -36,7 +36,7 @@ module Darian
       if arg.is_a? ::Time
         Darian::Time.from_earth(arg)
       elsif arg.is_a? ::DateTime
-        Darian::Time.from_earth(arg.to_time)
+        Darian::Time.from_earth(::Time.parse(arg.to_s))
       elsif arg.is_a? ::Date
         Darian::Date.from_earth(arg)
       else

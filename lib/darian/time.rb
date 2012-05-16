@@ -122,7 +122,7 @@ module Darian
 
     # Return martian date.
     def to_date
-      ::Darian::Date.new(self)
+      Darian::Date.new(self)
     end
   end
 end
