@@ -9,6 +9,7 @@ describe Darian do
 
   it "should convert by argument class" do
     Darian.from_earth(Time.now).should be_a(Darian::Time)
+    Darian.from_earth(DateTime.now).should be_a(Darian::Time)
     Darian.from_earth(Date.today).should be_a(Darian::Date)
   end
 
