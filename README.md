@@ -2,15 +2,18 @@
 
 The [Darian calendar] is a proposed system of time-keeping on the planet Mars.
 It was created by aerospace engineer and political scientist Thomas Gangale
-in 1985. This library use version 2002 year of calendar with Telescopic Epoch
+in 1985. This library use 2002 version of calendar with Telescopic Epoch
 (1609 instead of 1975 year in original calendar propose).
 
 This Ruby library convert Earth time to Mars time in Darian calendar.
 
 Based on [JS converter] by Thomas Gangale.
 
+Sponsored by [Evil Martians].
+
 [Darian calendar]: http://en.wikipedia.org/wiki/Darian_calendar
 [JS converter]: http://pweb.jps.net/~tgangale/mars/converter/calendar_clock.htm
+[Evil Martians]: http://evilmartians.com/
 
 ## Usage
 
