@@ -25,6 +25,9 @@ require File.join(dir, 'date_methods')
 require File.join(dir, 'time')
 require File.join(dir, 'date')
 
+# Darian Mars calendar.
+#
+#   mars_time = Darian.from_earth(earth_time)
 module Darian
   class << self
 

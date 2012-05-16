@@ -5,14 +5,15 @@ Gem::Specification.new do |s|
   s.name = 'darian'
   s.version = Darian::VERSION.dup
   s.date = Time.now.strftime('%Y-%m-%d')
-  s.summary = 'Darian Mars Calendar Converter.'
+  s.summary = 'Darian Mars calendar converter.'
   s.description = <<-EOF
-    Converter from Earth dates to mars dates by Darian calendar.
+    This is Ruby library to convert Earth time to Mars time in Darian calendar.
+    It use 2002 version of calendar with Telescopic Epoch.
   EOF
 
   s.files            = `git ls-files`.split("\n")
   s.test_files       = `git ls-files -- {spec}/*`.split("\n")
-  s.extra_rdoc_files = ['README.md', 'LICENSE']
+  s.extra_rdoc_files = ['README.md', 'LICENSE', 'ChangeLog']
   s.require_path     = 'lib'
 
   s.author   = 'Andrey "A.I." Sitnik'

@@ -28,12 +28,15 @@ module Darian
   class Date
     include DateMethods
 
+    # Return Mars date converted from Earth date.
+    #
+    #   Darian.from_earth(Date.today)
     def self.from_earth(date)
       time = ::Time.parse(date.to_s + " 00:00:00")
       ::Darian::Time.from_earth(time).to_date
     end
 
-    # Create martian date by time.
+    # Create martian date by martian time.
     def initialize(time)
       @year     = time.year
       @month    = time.month
