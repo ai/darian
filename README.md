@@ -18,7 +18,7 @@ Based on [JS converter] by Thomas Gangale.
 require 'darian'
 
 earth_time = Time.now
-mars_time  = Darian::Time.from_earth(earth_time)
+mars_time  = Darian.from_earth(earth_time)
 
 mars_time.to_s #=> "214-09-17 15:07:17"
 
@@ -29,6 +29,9 @@ mars_time.day   #=> 17
 
 mars_time.month_name    #=> "Aries"
 mars_time.week_sol_name #=> "Sol Martis"
+
+earth_date = Date.today
+mars_date  = Darian.from_earth(earth_date)
 ```
 
 ## License

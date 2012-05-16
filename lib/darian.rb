@@ -20,4 +20,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 dir = File.join(File.dirname(__FILE__), 'darian')
 require File.join(dir, 'version')
+require File.join(dir, 'date_methods')
 require File.join(dir, 'time')
+require File.join(dir, 'date')
+
+module Darian
+  class << self
+
+    # Convert `arg` to martian time or date, depend on `arg` class.
+    def from_earth(arg)
+      if arg.is_a? ::Time
+        Darian::Time.from_earth(arg)
+      elsif arg.is_a? ::Date
+        Darian::Date.from_earth(arg)
+      else
+        raise ArgumentError, "Can't convert #{arg.class} to martian time or date"
+      end
+    end
+
+  end
+end

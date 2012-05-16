@@ -23,27 +23,17 @@ module Darian
   #
   #   mars = Darian::Time.from_earth(Time.now)
   #   puts mars
-  #   puts mars.sol_name
+  #   puts mars.month_name
   class Time
     MARS_TO_EARTH_DAYS = 1.027491251
     EPOCH_OFFSET       = 587744.77817
     ROUND_UP_SECOND    = 1/86400
 
-    attr_reader :year
-    attr_reader :season
-    attr_reader :month
-    attr_reader :month_name
-    attr_reader :sol
-    attr_reader :week_sol
+    include DateMethods
+
     attr_reader :hour
     attr_reader :min
     attr_reader :sec
-
-    alias :day      :sol
-    alias :week_day :week_sol
-
-    attr_reader :sol_of_season
-    attr_reader :month_of_season
 
     # Return Mars time converted from Earth time.
     #
@@ -123,51 +113,15 @@ module Darian
       @sec  = ((min - min.floor) * 60).floor
     end
 
-    def month_name
-      case @month
-        when  1 then 'Sagittarius'
-        when  2 then 'Dhanus'
-        when  3 then 'Capricornus'
-        when  4 then 'Makara'
-        when  5 then 'Aquarius'
-        when  6 then 'Kumbha'
-        when  7 then 'Pisces'
-        when  8 then 'Mina'
-        when  9 then 'Aries'
-        when 10 then 'Mesha'
-        when 11 then 'Taurus'
-        when 12 then 'Rishabha'
-        when 13 then 'Gemini'
-        when 14 then 'Mithuna'
-        when 15 then 'Cancer'
-        when 16 then 'Karka'
-        when 17 then 'Leo'
-        when 18 then 'Simha'
-        when 19 then 'Virgo'
-        when 20 then 'Kanya'
-        when 21 then 'Libra'
-        when 22 then 'Tula'
-        when 23 then 'Scorpius'
-        when 24 then 'Vrishika'
-      end
-    end
-
-    def week_sol_name
-      case @week_sol
-        when 1 then 'Sol Solis'
-      	when 2 then 'Sol Lunae'
-      	when 3 then 'Sol Martis'
-      	when 4 then 'Sol Mercurii'
-      	when 5 then 'Sol Jovis'
-      	when 6 then 'Sol Veneris'
-      	when 7 then 'Sol Saturni'
-      end
-    end
-    alias :week_day_name :week_sol_name
-
+    # Printable string of martian time.
     def to_s
       sprintf '%d-%02d-%02d %02d:%02d:%02d',
               @year, @month, @sol, @hour, @min, @sec
+    end
+
+    # Return martian date.
+    def to_date
+      ::Darian::Date.new(self)
     end
   end
 end
