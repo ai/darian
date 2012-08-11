@@ -1,6 +1,9 @@
 source :rubygems
 
 gem 'rake'
-gem 'yard'
 gem 'rspec'
-gem 'redcarpet'
+
+group :development do
+  gem 'redcarpet'
+  gem 'yard'
+end
