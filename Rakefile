@@ -15,10 +15,13 @@ require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new
 
-require 'yard'
-YARD::Rake::YardocTask.new do |yard|
-  yard.options << "--title='Darian Mars Calendar Converter #{Darian::VERSION}'"
-end
+begin
+  require 'yard'
+  YARD::Rake::YardocTask.new do |yard|
+    v = Darian::VERSION
+    yard.options << "--title='Darian Mars Calendar Converter #{v}'"
+  end
+rescue LoadError; end
 
 task :clobber_doc do
   rm_r 'doc'     rescue nil
