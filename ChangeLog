@@ -1,3 +1,8 @@
+== 0.1 (Viking 2)
+* Add Date.today and Time.now shortcuts.
+* Add parse_earth shortcut to Date and Time.
+* Allow to compare dates and times.
+
 == 0.0.3 (Viking 1)
 * Convert DateTime to martian time.
 * Fix documentation.
