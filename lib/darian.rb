@@ -44,5 +44,15 @@ module Darian
       end
     end
 
+    # Return current Mars time. Shortcut for `Darian.from_earth(Time.now)`.
+    def now
+      Darian::Time.from_earth(::Time.now)
+    end
+
+    # Return current Mars date. Shortcut for `Darian.from_earth(Date.today)`.
+    def today
+      Darian::Date.from_earth(::Date.today)
+    end
+
   end
 end

@@ -14,4 +14,18 @@ describe Darian do
     lambda { Darian.from_earth(1) }.should raise_error(ArgumentError)
   end
 
+  it "should return current time" do
+    earth = Time.parse('2012-05-16 10:00:00 UTC')
+    Time.should_receive(:now).and_return(earth)
+
+    Darian.now.to_s.should == '214-09-17 15:07:17'
+  end
+
+  it "should return current date" do
+    earth = Time.parse('2012-05-16 10:00:00 UTC')
+    Time.should_receive(:now).and_return(earth)
+
+    Darian.today.to_s.should == '214-17-05'
+  end
+
 end
