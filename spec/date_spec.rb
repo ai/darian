@@ -39,4 +39,17 @@ describe Darian::Date do
     Darian::Date.parse_earth('2012-05-16').to_s.should == @mars.to_s
   end
 
+  it "should compare dates" do
+    past   = Darian::Date.parse_earth('2012-05-15')
+    same   = Darian::Date.parse_earth('2012-05-16')
+    future = Darian::Date.parse_earth('2012-05-17')
+
+    @mars.should > past
+    @mars.should < future
+    @mars.should == same
+
+    @mars.should_not < past
+    @mars.should_not > future
+  end
+
 end

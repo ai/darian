@@ -22,6 +22,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 module Darian
   # Common date methods for Time and Date classes.
   module DateMethods
+    include Comparable
+
     attr_reader :year
     attr_reader :month
     attr_reader :sol
@@ -76,5 +78,9 @@ module Darian
       end
     end
     alias :week_day_name :week_sol_name
+
+    def <=>(another)
+      since_epoch <=> another.since_epoch
+    end
   end
 end

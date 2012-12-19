@@ -49,4 +49,17 @@ describe Darian::Time do
     Darian::Time.parse_earth(str).to_s.should == @mars.to_s
   end
 
+  it "should compare times" do
+    past   = Darian::Time.parse_earth('2012-05-16 09:59:59 UTC')
+    same   = Darian::Time.parse_earth('2012-05-16 10:00:00 UTC')
+    future = Darian::Time.parse_earth('2012-05-16 10:00:01 UTC')
+
+    @mars.should > past
+    @mars.should < future
+    @mars.should == same
+
+    @mars.should_not < past
+    @mars.should_not > future
+  end
+
 end
