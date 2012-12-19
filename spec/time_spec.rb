@@ -8,7 +8,7 @@ describe Darian::Time do
     @mars = Darian::Time.from_earth(earth)
   end
 
-  it "should convert Earch time to Mars" do
+  it "should convert Earth time to Mars" do
     @mars.year.should  == 214
     @mars.month.should == 9
     @mars.sol.should   == 17
@@ -41,6 +41,11 @@ describe Darian::Time do
     date = @mars.to_date
     date.should be_a(Darian::Date)
     date.to_s.should == '214-09-17'
+  end
+
+  it "should parse Earth time" do
+    str = '2012-05-16 10:00:00 UTC'
+    Darian::Time.parse_earth(str).to_s.should == @mars.to_s
   end
 
 end

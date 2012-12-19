@@ -46,6 +46,12 @@ module Darian
       self.new(sols)
     end
 
+    # Parse Earth time and convert to Mars time.
+    # Shortcut for `Darian::Time.from_earth(Time.parse(string))`.
+    def self.parse_earth(string)
+      self.from_earth(::Time.parse(string))
+    end
+
     # Create Mars time by sols since 0 year.
     #
     # It is internal contructor. Use `Darian.from_earth`.

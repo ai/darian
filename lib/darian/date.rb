@@ -36,6 +36,12 @@ module Darian
       Darian::Time.from_earth(time).to_date
     end
 
+    # Parse Earth date and convert to Mars date.
+    # Shortcut for `Darian::Date.from_earth(Date.parse(string))`.
+    def self.parse_earth(string)
+      self.from_earth(::Date.parse(string))
+    end
+
     # Create martian date by martian time.
     def initialize(time)
       @year     = time.year
