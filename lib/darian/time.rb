@@ -56,6 +56,8 @@ module Darian
     #
     # It is internal contructor. Use `Darian.from_earth`.
     def initialize(sols)
+      @since_epoch = sols
+
       sD  = (sols / 334296).floor
       doD = (sols - (sD * 334296)).floor
 

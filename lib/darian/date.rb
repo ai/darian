@@ -44,6 +44,8 @@ module Darian
 
     # Create martian date by martian time.
     def initialize(time)
+      @since_epoch = time.since_epoch.floor
+
       @year     = time.year
       @month    = time.month
       @sol      = time.sol

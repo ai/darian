@@ -26,6 +26,7 @@ module Darian
     attr_reader :month
     attr_reader :sol
 
+    attr_reader :since_epoch
     attr_reader :week_sol
     attr_reader :season
     attr_reader :sol_of_season

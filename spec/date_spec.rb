@@ -13,7 +13,8 @@ describe Darian::Date do
     @mars.month.should == 9
     @mars.sol.should   == 17
 
-    @mars.week_sol.should == 3
+    @mars.since_epoch.should == 143318
+    @mars.week_sol.should    == 3
 
     @mars.season.should          == 1
     @mars.month_of_season.should == 2
