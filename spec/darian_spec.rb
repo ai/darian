@@ -18,14 +18,14 @@ describe Darian do
     earth = Time.parse('2012-05-16 10:00:00 UTC')
     Time.should_receive(:now).and_return(earth)
 
-    Darian.now.to_s.should == Darian::Time.from_earth(earth).to_s
+    Darian.now.should == Darian::Time.from_earth(earth)
   end
 
   it "should return current date" do
     earth = Date.parse('2012-05-16')
     Date.should_receive(:today).and_return(earth)
 
-    Darian.today.to_s.should == Darian::Date.from_earth(earth).to_s
+    Darian.today.should == Darian::Date.from_earth(earth)
   end
 
 end
