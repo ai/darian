@@ -36,12 +36,3 @@ mars_time.week_sol_name #=> "Sol Martis"
 earth_date = Date.today
 mars_date  = Darian.from_earth(earth_date)
 ```
-
-## License
-
-Library is licensed under the GNU Lesser General Public License version 3.
-See the LICENSE file or http://www.gnu.org/licenses/lgpl.html.
-
-## Author
-
-Andrey “A.I.” Sitnik <andrey@sitnik.ru>
