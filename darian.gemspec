@@ -20,10 +20,4 @@ Gem::Specification.new do |s|
   s.email    = 'andrey@sitnik.ru'
   s.homepage = 'https://github.com/ai/darian'
   s.license  = 'MIT'
-
-  s.add_development_dependency "bundler",   [">= 1.0.10"]
-  s.add_development_dependency "yard",      [">= 0"]
-  s.add_development_dependency "rake",      [">= 0"]
-  s.add_development_dependency "rspec",     [">= 0"]
-  s.add_development_dependency "redcarpet", [">= 0"]
 end
