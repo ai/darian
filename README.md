@@ -1,4 +1,4 @@
-# Darian Mars Calendar Converter
+# Darian Mars Calendar Converter [![Build Status](https://travis-ci.org/ai/darian.svg)](https://travis-ci.org/ai/darian)
 
 This is Ruby library to convert Earth time to Mars time in Darian calendar.
 
@@ -9,11 +9,12 @@ in 1985. This library use 2002 version of calendar with Telescopic Epoch
 
 Based on [JS converter] by Thomas Gangale.
 
-Sponsored by [Evil Martians].
+<a href="https://evilmartians.com/?utm_source=darian">
+<img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54">
+</a>
 
 [Darian calendar]: http://en.wikipedia.org/wiki/Darian_calendar
 [JS converter]: http://pweb.jps.net/~tgangale/mars/converter/calendar_clock.htm
-[Evil Martians]: http://evilmartians.com/
 
 ## Usage
 
