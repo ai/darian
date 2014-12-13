@@ -9,44 +9,44 @@ describe Darian::Time do
   end
 
   it "should convert Earth time to Mars" do
-    @mars.year.should  == 214
-    @mars.month.should == 9
-    @mars.sol.should   == 17
-    @mars.hour.should  == 15
-    @mars.min.should   == 7
-    @mars.sec.should   == 17
+    expect(@mars.year).to  eq 214
+    expect(@mars.month).to eq   9
+    expect(@mars.sol).to   eq  17
+    expect(@mars.hour).to  eq  15
+    expect(@mars.min).to   eq   7
+    expect(@mars.sec).to   eq  17
 
-    @mars.since_epoch.should == 143318.630064585
-    @mars.week_sol.should    == 3
+    expect(@mars.since_epoch).to eq 143318.630064585
+    expect(@mars.week_sol).to eq    3
 
-    @mars.season.should          == 1
-    @mars.month_of_season.should == 2
+    expect(@mars.season).to          eq 1
+    expect(@mars.month_of_season).to eq 2
   end
 
   it "should set month and week sol name" do
-    @mars.month_name.should    == 'Aries'
-    @mars.week_sol_name.should == 'Sol Martis'
+    expect(@mars.month_name).to    eq 'Aries'
+    expect(@mars.week_sol_name).to eq 'Sol Martis'
   end
 
   it "should alias day to sol" do
-    @mars.day.should           == @mars.sol
-    @mars.week_day.should      == @mars.week_sol
-    @mars.week_day_name.should == @mars.week_sol_name
+    expect(@mars.day).to           eq @mars.sol
+    expect(@mars.week_day).to      eq @mars.week_sol
+    expect(@mars.week_day_name).to eq @mars.week_sol_name
   end
 
   it "should print mars time" do
-    @mars.to_s.should == '214-09-17 15:07:17'
+    expect(@mars.to_s).to eq '214-09-17 15:07:17'
   end
 
   it "should convert to date" do
     date = @mars.to_date
-    date.should be_a(Darian::Date)
-    date.to_s.should == '214-09-17'
+    expect(date).to be_a(Darian::Date)
+    expect(date.to_s).to eq  '214-09-17'
   end
 
   it "should parse Earth time" do
     str = '2012-05-16 10:00:00 UTC'
-    Darian::Time.parse_earth(str).should == @mars
+    expect(Darian::Time.parse_earth(str)).to eq @mars
   end
 
   it "should compare times" do
@@ -54,12 +54,12 @@ describe Darian::Time do
     same   = Darian::Time.parse_earth('2012-05-16 10:00:00 UTC')
     future = Darian::Time.parse_earth('2012-05-16 10:00:01 UTC')
 
-    @mars.should >  past
-    @mars.should <  future
-    @mars.should == same
+    expect(@mars).to be > past
+    expect(@mars).to be < future
+    expect(@mars).to eq same
 
-    @mars.should_not < past
-    @mars.should_not > future
+    expect(@mars).not_to be < past
+    expect(@mars).not_to be > future
   end
 
 end
